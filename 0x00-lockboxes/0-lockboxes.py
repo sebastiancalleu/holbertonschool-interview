@@ -2,6 +2,9 @@
 
 
 def canUnlockAll(boxes):
+    """
+    function for determine if all boxes are Unlockables
+    """
     lt1 = []
     for i in range(1, len(boxes)):
         lt1.append(i)
