@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" lockboxes """
 
 
 def canUnlockAll(boxes):
