@@ -1,21 +1,16 @@
-#!/usr/bin/python3
-""" lockboxes """
+""" Write a method that determines if all the boxes can be opened.
+"""
 
 
 def canUnlockAll(boxes):
-    """
-    function for determine if all boxes are Unlockables
-    """
-    lt1 = []
-    for i in range(1, len(boxes)):
-        lt1.append(i)
-
-    for i in range(0, len(boxes)):
-        for j in range(0, len(boxes[i])):
-            if boxes[i][j] in lt1:
-                lt1.remove(boxes[i][j])
-                break
-
-    if len(lt1) == 0:
+    unlock_boxes = 0
+    unlock = [unlock_boxes]
+    for index in unlock:
+        underbox = boxes[index]
+        for indexKeyBox in underbox:
+            if indexKeyBox not in unlock and indexKeyBox < len(boxes):
+                unlock += [indexKeyBox]
+    if len(unlock) == len(boxes):
         return True
-    return False
+    else:
+        return False
